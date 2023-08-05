@@ -1,0 +1,42 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore all log files.
+/log/*.log
+
+# Ignore compiled assets.
+/public/assets
+
+# Ignore any local configuration files.
+/config/database.yml
+/config/master.key
+
+# Ignore node_modules.
+/node_modules
+
+# Ignore SQLite database.
+/db/*.sqlite3
+
+# Ignore the yarn error log.
+/yarn-error.log
+
+# Ignore .env files.
+.env*
+
+# Ignore .DS_Store files (macOS specific).
+.DS_Store
+
+# Ignore Sprockets cache.
+/tmp/cache/sprockets
+
+# Ignore tmp folder.
+/tmp
+
+# Ignore coverage results.
+/coverage/
+
+# Ignore the secret_token file.
+/config/initializers/secret_token.rb
+
+# Ignore Visual Studio Code settings (optional).
+.vscode/
