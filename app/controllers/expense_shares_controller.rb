@@ -20,7 +20,7 @@ class ExpenseSharesController < ApplicationController
     #      "paid_by" : 2
     #   }
     def create
-      expense = Expense.new(created_by_id: @current_user.id, group_id: @group.id,amount: params[:amount])
+      expense = Expense.new(created_by_id: @current_user.id, group_id: @group.id, amount: params[:amount], paid_by: params[:paid_by])
 
       if expense.save
         if params[:custom_shares]
@@ -63,7 +63,7 @@ class ExpenseSharesController < ApplicationController
       }, status: 422
     end
 
-    def show_total_expense
+    def show_total_expense #show total expense of a member/user 
         group = Group.find_by(id: params[:group_id])
         unless group
             return render json:{

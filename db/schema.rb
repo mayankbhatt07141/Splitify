@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_30_111232) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_06_073652) do
   create_table "expense_shares", force: :cascade do |t|
     t.float "share_amount"
     t.integer "user_id", null: false
     t.integer "expense_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0
     t.index ["expense_id"], name: "index_expense_shares_on_expense_id"
     t.index ["user_id"], name: "index_expense_shares_on_user_id"
   end
@@ -27,6 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_30_111232) do
     t.integer "group_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "paid_by"
     t.index ["created_by_id"], name: "index_expenses_on_created_by_id"
     t.index ["group_id"], name: "index_expenses_on_group_id"
   end
